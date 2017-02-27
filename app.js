@@ -10,7 +10,7 @@ var db = mongoose.connect('mongodb://dbUser:dbPassword@ds155428.mlab.com:55428/g
 var app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.get('/getRecord', function (req, res, next) {
