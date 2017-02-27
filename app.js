@@ -5,7 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose/');
-var db = mongoose.connect('mongodb://dbUser:dbPassword@ds155428.mlab.com:55428/getir-bitaksi-hackathon');
+//var db = mongoose.connect('mongodb://dbUser:dbPassword@ds155428.mlab.com:55428/getir-bitaksi-hackathon');
 // var records = mongoose.model('records', yourSchema);
 var app = express();
 
@@ -14,18 +14,18 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.get('/getRecord', function (req, res, next) {
-  var key = 'chp8vgSkJDbyDKAS';//req.body.key || null
+  var key = null;//'chp8vgSkJDbyDKAS';//req.body.key || null
 
   if(!key) {
     res.end('post is empty!');
   }
 
-  var query = db.records.findOne({ 'key': key });
-
-  query.exec(function (err, item) {
-    if (err) return handleError(err);
-    res.json(item);
-  });
+  // var query = db.records.findOne({ 'key': key });
+  //
+  // query.exec(function (err, item) {
+  //   if (err) return handleError(err);
+  //   res.json(item);
+  // });
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
