@@ -1,6 +1,7 @@
 var express = require('express')
   , bodyParser = require('body-parser')
   , app = express()
+  , port = process.env.PORT || 8080
   , mongoose = require('mongoose/')
   , Schema = mongoose.Schema
   , Records = new Schema({
@@ -43,6 +44,6 @@ app.use(function(err, req, res, next) {
   res.end(err.message);
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
     console.log('Example app listening on port 3000!')
 });
